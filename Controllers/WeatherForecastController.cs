@@ -15,6 +15,10 @@ namespace ReactAPI.Controllers
         {
             "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
         };
+        private static readonly string[] Precipitations = new[]
+       {
+            "Dry", "Damp", "Wet", "Snow", "Hail", "Rain", "Tsunami", "Tornado"
+        };
 
         private readonly ILogger<WeatherForecastController> _logger;
 
@@ -31,7 +35,8 @@ namespace ReactAPI.Controllers
             {
                 Date = DateTime.Now.AddDays(index),
                 TemperatureC = rng.Next(-20, 55),
-                Summary = Summaries[rng.Next(Summaries.Length)]
+                Summary = Summaries[rng.Next(Summaries.Length)],
+                Precipitation = Precipitations[rng.Next(Precipitations.Length)]
             })
             .ToArray();
         }

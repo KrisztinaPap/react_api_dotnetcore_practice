@@ -21,15 +21,18 @@ export class FetchData extends Component {
             <th>Temp. (C)</th>
             <th>Temp. (F)</th>
             <th>Summary</th>
+            <th>Precipitation</th>
+       
           </tr>
         </thead>
         <tbody>
           {forecasts.map(forecast =>
             <tr key={forecast.date}>
-              <td>{forecast.date}</td>
-              <td>{forecast.temperatureC}</td>
-              <td>{forecast.temperatureF}</td>
-              <td>{forecast.summary}</td>
+                <td>{forecast.date}</td>
+                <td>{forecast.temperatureC}</td>
+                <td>{forecast.temperatureF}</td>
+                <td>{forecast.summary}</td>
+                <td>{forecast.precipitation}</td>
             </tr>
           )}
         </tbody>
